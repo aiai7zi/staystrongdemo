@@ -1,3 +1,4 @@
 rootProject.name ='staystrongdemo'
 
 include ':staystrong001-ssm01-demo01'
+include ':staystrong002-springboot01-demo01'
