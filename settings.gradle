@@ -1,1 +1,3 @@
-rootProject.name='staystrongdemo'
+rootProject.name ='staystrongdemo'
+
+include ':staystrong001-ssm01-demo01'

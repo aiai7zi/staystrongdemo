@@ -16,6 +16,12 @@ plugins {
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+ext{
+    yilai=[
+            mybatisplus                 :   'com.baomidou:mybatis-plus:3.3.0',
+            springbootversion           :   '2.0.3.RELEASE'
+    ]
+}
 subprojects{
     apply plugin: 'java'
     apply plugin: 'idea'
@@ -45,5 +51,43 @@ subprojects{
         testAnnotationProcessor 'org.projectlombok:lombok:1.18.2'
         testCompileOnly 'org.projectlombok:lombok:1.18.2'
         testCompile  group: 'junit', name: 'junit', version: '4.12'
+    }
+}
+project(":staystrong001-ssm01-demo01"){
+    dependencies {
+        //tomcat依赖包 start
+        compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '8.5.51'
+        // https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper
+        compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '8.5.51'
+        //tomcat依赖包 end
+
+        //spring依赖包 start
+        // https://mvnrepository.com/artifact/org.springframework/spring-context
+        compile group: 'org.springframework', name: 'spring-context', version: '5.1.5.RELEASE'
+        // https://mvnrepository.com/artifact/org.springframework/spring-webmvc
+        compile group: 'org.springframework', name: 'spring-webmvc', version: '5.2.2.RELEASE'
+        compile group: 'org.springframework', name: 'spring-tx', version: '5.1.5.RELEASE'
+        compile group: 'org.springframework', name: 'spring-jdbc', version: '5.1.5.RELEASE'
+        //spring依赖包 end
+
+        // https://mvnrepository.com/artifact/com.alibaba/fastjson
+        compile group: 'com.alibaba', name: 'fastjson', version: '1.2.70'
+
+        //数据库使用包 start
+        // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+        compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.48'
+        // https://mvnrepository.com/artifact/com.alibaba/druid
+         compile group: 'com.alibaba', name: 'druid', version: '1.1.16'
+        compile this.yilai.mybatisplus
+        //mybatis-plus代码生成器的模板引擎
+        compile 'org.apache.velocity:velocity-engine-core:2.2'
+        compile 'com.baomidou:mybatis-plus-generator:3.3.0'
+        //数据库使用包 end
+        //日志依赖包使用的是log4j start
+        compile group: 'org.slf4j', name: 'jul-to-slf4j', version: '1.7.26'
+        // compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.26'
+        compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.12'
+        compile group: 'log4j', name: 'log4j', version: '1.2.17'
+        //日志依赖包使用的是log4j end
     }
 }
