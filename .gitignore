@@ -1,0 +1,17 @@
+/src
+!.gitignore
+/.gradle
+/*/.gradle
+/*/gradle
+/*/build.gradle
+/*/gradlew
+/*/gradlew.bat
+/*/settings.gradle
+/.idea
+/*/out/*
+*.iml
+/tomcat.*
+/out
+/log
+/gradle
+/*/build
