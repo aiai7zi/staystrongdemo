@@ -116,3 +116,29 @@ project(":staystrong002-springboot01-demo01"){
         testCompile group: 'junit', name: 'junit', version: '4.12'
     }
 }
+project(":staystrong003-springbootshiro01-demo01"){
+    apply plugin: "org.springframework.boot"
+    // 使用spring boot的自动依赖管理
+    apply plugin: 'io.spring.dependency-management'
+    dependencies {
+        compile 'org.springframework.boot:spring-boot-starter-web'
+        // https://mvnrepository.com/artifact/com.alibaba/fastjson
+        compile group: 'com.alibaba', name: 'fastjson', version: '1.2.62'
+        // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+        compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.48'
+        // https://mvnrepository.com/artifact/com.alibaba/druid
+        compile group: 'com.alibaba', name: 'druid', version: '1.1.16'
+        //redis 缓存操作
+        compile 'org.springframework.boot:spring-boot-starter-data-redis'
+        //       <!--常用工具类 -->
+        compile 'org.apache.commons:commons-lang3:3.7'
+        //       <!--常用工具类 -->
+        compile 'commons-io:commons-io:2.5'
+
+        // https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter
+        compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.1.2'
+        // https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter
+        compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.3.1'
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+    }
+}
